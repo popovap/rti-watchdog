@@ -12,4 +12,4 @@ Related files:
 * ```/usr/local/sbin/rti-watchdog-daemon.py``` - the daemon itself
 * ```/var/run/rti-watchdog/rti-watchdog-daemon.pid``` - PID file created by systemd
 * ```/etc/systemd/system/rti-watchdog.service``` - systemd service for automatic startup of the daemon
-* ```/var/log/rti-watchdog/``` - folder where the daemon keeps its logs, has owners 'nobody:nogroup' in my case.
+* ```/var/log/rti-watchdog/``` - folder where the daemon keeps its logs, has owners 'nobody:nogroup' in my case. Log rotation is done by python logger module and daemon itself, not system logrotate.
