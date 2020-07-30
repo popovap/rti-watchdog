@@ -1,0 +1,18 @@
+[Unit]
+Description=RTI Watchdog daemon
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/rti-watchdog/rti-watchdog-daemon.pid
+User=nobody
+Group=nogroup
+ExecStart=/usr/bin/python3 /usr/local/sbin/rti-watchdog-daemon.py start
+ExecReload=/usr/bin/python3 /usr/local/sbin/rti-watchdog-daemon.py restart
+ExecStop=/usr/bin/python3 /usr/local/sbin/rti-watchdog-daemon.py stop
+KillMode=process
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+
