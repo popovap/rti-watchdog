@@ -44,13 +44,14 @@ allhosts = DataFrame([{'RTI': '192.168.21.12',  'NetPingAddr': '192.168.21.30', 
                   ])
 allhosts = allhosts.set_index(['RTI'])
 
+# host from where we sending request
 port = 4999
 lochost='192.168.97.12'
 msg = "12345"
 timeout = 5
 waitanswer = 5
 
-#recipient = "ridven@yandex.ru"
+# we suppose that system sendmail configured somehow to send these emails by means of unix mail program. In our case we use ssmtp.
 recipient = "support@example.com"
 carboncopy="engineer@example.com"
 subject = "RTI watchdog ALARM"
